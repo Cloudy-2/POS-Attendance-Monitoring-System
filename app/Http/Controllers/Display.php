@@ -51,6 +51,10 @@ class Display extends Controller
     public function Display2(){
         return view ('Employee');
     }
+    public function DisplayAddEmployeeList() {
+        return view('EmployeeList');
+    }
+    
     public function Display1(){
 
         $attendances = Attendance::all();
@@ -104,12 +108,17 @@ class Display extends Controller
                 'password' => $IncomingFields['password']
             ])) {
                 $request->session()->regenerate();
-                return redirect('admindash');
-            }
-            else {
+
+                // Flash a session message to show the Sweet Alert on the dashboard
+                session()->flash('login_success', 'You have successfully logged in!');
+
+                // Redirect to the named dashboard route
+                return redirect()->route('admin.dashboard');
+            } else {
                 return redirect('login')->with('incorrect_msg', 'Incorrect Credentials. Login Unsuccessful.');
             }
         }
+
    
     public function Submit(Request $data)
     {

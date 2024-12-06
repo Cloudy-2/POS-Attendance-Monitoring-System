@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deduction and Position Management</title>
+    <title>Employee Management Pages</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -200,47 +200,27 @@
             </div>
         </div>
 
-    <!-- Main Content for Deduction Management -->
+    <!-- Main Content -->
     <div class="main-content">
-        <h2>Deduction</h2>
+        <h2>Employee List</h2>
         <div class="table-wrapper">
             <button class="btn btn-primary mb-3"><i class="fas fa-plus"></i> New</button>
             <div class="table-responsive">
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th>Description</th>
-                            <th>Amount</th>
+                            <th>Employee ID</th>
+                            <th>Photo</th>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Schedule</th>
+                            <th>Member Since</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td colspan="3" class="text-center">No data available in table</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Content for Position Management -->
-    <div class="main-content">
-        <h2>Position Management</h2>
-        <div class="table-wrapper">
-            <button class="btn btn-primary mb-3"><i class="fas fa-plus"></i> New</button>
-            <div class="table-responsive">
-                <table class="table table-striped table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Position Title</th>
-                            <th>Rate Per Hour</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td colspan="3" class="text-center">No data available in table</td>
+                            <td colspan="7" class="text-center">No data available in table</td>
                         </tr>
                     </tbody>
                 </table>
