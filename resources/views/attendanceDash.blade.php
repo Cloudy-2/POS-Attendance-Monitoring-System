@@ -79,7 +79,7 @@
             <tr>
                 <td>{{ $attendance->date }}</td>
                 <td>{{ $attendance->employee_id }}</td>
-                <td>{{ $attendance->employee->name ?? 'N/A' }}</td> <!-- Assuming relationship exists -->
+                <td>{{ $attendance->employee->first_name . ' ' . $attendance->employee->last_name ?? 'N/A' }}</td>
                 <td>{{ $attendance->check_in_time }}</td>
                 <td>{{ $attendance->check_out_time ?? 'N/A' }}</td>
                 <td>

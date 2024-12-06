@@ -115,7 +115,11 @@
 <input type="hidden" name="check_in_time" value="{{ now()->toTimeString() }}">
 </form>
 
-    <script>
+
+    
+
+</body>
+<script>
     // Function to update clock in real time
     function updateClock() {
         const currentTime = new Date().toLocaleTimeString();
@@ -134,6 +138,4 @@
         
     }
 </script>
-
-</body>
 </html>
