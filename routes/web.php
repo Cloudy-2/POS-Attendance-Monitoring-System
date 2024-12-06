@@ -15,6 +15,8 @@ Route::get('/overtime',[Display::class,'Display7']);
 Route::get('/payroll',[Display::class,'Display8']);
 Route::get('/deduction',[Display::class,'Display9']);
 Route::get('/cashadvance',[Display::class,'Display10']);
+Route::get('/login',[Display::class,'Display11']);
 
+Route::post('/loginAuth', [Display::class,'loginAuth']);
 Route::post('/Submit', [Display::class,'Submit']);
 Route::post('/add', [Display::class,'add']);

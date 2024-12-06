@@ -5,10 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Attendance;
 use App\Models\Employee;
+use App\Models\user_table;
+Use Illuminate\Support\Facades\Auth;
 
 
 class Display extends Controller
+
 {
+    public function Display11(){
+
+        return view ('login');
+    }
     public function Display10(){
 
         return view ('cashadvance');
@@ -74,7 +81,35 @@ class Display extends Controller
         
     }
     
-    
+    public function showlogin() {
+        if (auth::check()) {
+            $users = user_table::all();
+            return view('login-sucess', compact('user_table'));
+            
+        }
+        else {
+            return view('homepage');
+        }
+    }
+
+    public function loginAuth(Request $request) 
+        {
+            $IncomingFields = $request->validate([
+                'username' => 'required',
+                'password' => 'required',
+            ]);
+            
+            if (Auth::attempt([
+                'username' => $IncomingFields['username'],
+                'password' => $IncomingFields['password']
+            ])) {
+                $request->session()->regenerate();
+                return redirect('admindash');
+            }
+            else {
+                return redirect('login')->with('incorrect_msg', 'Incorrect Credentials. Login Unsuccessful.');
+            }
+        }
    
     public function Submit(Request $data)
     {
